@@ -98,13 +98,16 @@
 }
 .game-result{
   position: absolute;
-  width: 100%;
-  left: 0%;
+  width: 50%;
+  left: 25%;
   top: 40%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+.game-result span{
+  width: 100%;
 }
 #winner{
   color: green;
