@@ -24,7 +24,7 @@ import { ApiService } from '../../Services/Api.service';
   
 })
 export class GameComponent {
-  translateX=-90
+  translateX=-85
   playerTranslateY=8
   player2TranslateY=-70;
 

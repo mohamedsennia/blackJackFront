@@ -108,6 +108,7 @@
 }
 .game-result span{
   width: 100%;
+  text-align: center;
 }
 #winner{
   color: green;
@@ -126,4 +127,9 @@ font-size: 9pt;
     0%{ transform: rotate(0deg);}
     100%{transform: rotate(360deg);}
     
+}
+@media (max-width: 768px) {
+  .image-holder{
+    width: 7vh;
+  }
 }
