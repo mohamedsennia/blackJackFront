@@ -1,0 +1,12 @@
+<div id="backButton" (click)="navigateBack()"><i class="fa-solid fa-arrow-left fa-2xl"></i></div>
+<div id="card-container">
+    <div><img  id="ace1" src="assets/ace1.png" alt="aaaaaaaaaa"></div>
+    
+    <div id="card">
+        <h1>BlackJack</h1>
+        <div (keydown)="clearErrorMessage()" class="card-item input-holder"><input [(ngModel)]="username" name="username" placeholder=" your username" type="text"></div>
+        <div (click)="joinGame()" class="card-item hoverable">Start Game</div>
+        <span class="error-message">{{errorMessage}}</span>
+    </div>
+    <div id="ace2-container"><img  id="ace2" src="assets/ace2.png" alt="aaaaaaaaaa"></div>
+</div>

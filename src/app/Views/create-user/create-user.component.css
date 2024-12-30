@@ -1,0 +1,132 @@
+:host {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #34495E;
+    height: 100vh;
+    margin: 0;
+}
+#backButton{
+    position: absolute;
+    top:2%;
+    left: 2%;
+    width: 4%;
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: #9fb5cb;
+    transition: background-color 300ms;
+}
+#backButton:hover{
+background-color: #5a7ea3;
+}
+#card-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+    width: 30vw;
+}
+
+#card {
+    display: flex;
+    flex-direction: column;
+  
+    align-items: center;
+    background-color: #2C3E50;
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.084);
+    z-index: 1;
+}
+.error-message{
+    color: red;
+    font-size: 9pt;
+}
+h1 {
+    color: #BDC3C7;
+    font-family: sans-serif;
+    margin: 20% 0% 10% 0;
+    font-size: 2rem;    
+}
+
+.card-item {
+    background-color: #2ECC71;
+    color: #FFFFFF;
+   
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin: 10px 0;
+    text-align: center;
+    transition: background-color 300ms;
+    width: 40%;
+}
+.input-holder{
+    width: calc(40% + 40px);
+    padding: 10px 0px;
+}
+input{
+    width: 80%;
+    padding: 5px 10px;
+    border-radius: 25px;
+    border: none;
+    background-color: #b7ffd6;
+    color: black;
+}
+input:focus{
+    outline: none;
+}
+.hoverable{
+    padding: 10px 20px;
+}
+.hoverable:hover {
+    background-color: #C0392B;
+}
+
+img {
+    position: absolute;
+    width: 100px;
+    z-index: 0;
+}
+
+#ace1 {
+    left: -50px;
+    top: -60px;
+    transform: rotate(-45deg);
+}
+
+#ace2 {
+    right: -40px;
+    bottom: -50px;
+    transform: rotate(-45deg);
+}
+
+
+@media (max-width: 768px) {
+    #card-container {
+        width: 60vw;
+        height: 60vh;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .card-item {
+        font-size: 0.9rem;
+    }
+
+    img {
+        width: 80px;
+    }
+    #backButton{
+        width: 8%;
+    }
+
+}

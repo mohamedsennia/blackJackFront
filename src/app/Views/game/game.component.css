@@ -1,0 +1,126 @@
+:host{
+    background-image: url(/assets/table.jpg);
+    display: block;
+    height: 100%;
+    width: 100%;
+    background-repeat: repeat;
+    background-size: cover;
+  
+    
+}
+#game-container{
+    color: white;
+    height: calc(100% - 50vh);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 25vh 10px 25vh 30px;
+    width: 55%;
+}
+.player{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    font-size: 1.2em;
+  font-family: Arial, sans-serif;
+  color: white;
+    
+}
+#buttons-container{
+    display: flex;
+}
+.button {
+    background-color: #2ECC71; /* Green for Draw */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 10px;
+    transition: background-color 0.3s ease;
+    text-align: center;
+  }
+  
+  .button:hover {
+    background-color: #27AE60; /* Darker green on hover */
+  }
+  
+  .button.fold {
+    background-color: #C0392B; /* Red for Fold */
+  }
+  
+  .button.fold:hover {
+    background-color: #A93226; /* Darker red on hover */
+  }
+
+  
+.image-holder{
+    width: 10vh;
+    position: absolute;
+    right: 2%;
+    transform-style: preserve-3d;
+}
+.front,
+.back {
+  width: 100%;
+  height: 100px;
+  position: absolute;
+  backface-visibility: hidden;
+
+}
+.back{
+    transform: rotateY(180deg);
+ 
+    position: absolute;
+    backface-visibility: hidden;
+}
+.loader {
+    border: 16px solid #f3f3f3; /* Light grey */
+    border-top: 16px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    animation: spin 2s linear infinite;
+  }
+#loader-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+}
+#loader-container h1{
+    color: white;
+    margin-bottom: 3%;
+}
+.game-result{
+  position: absolute;
+  width: 100%;
+  left: 0%;
+  top: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#winner{
+  color: green;
+}
+#loser{
+  color: red;
+}
+.comment{
+font-size: 9pt;
+ color: gray;
+}
+.replay{
+  width: 14vw;
+}
+@keyframes spin {
+    0%{ transform: rotate(0deg);}
+    100%{transform: rotate(360deg);}
+    
+}

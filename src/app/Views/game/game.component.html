@@ -1,0 +1,44 @@
+<div *ngIf="gameStatus==='WAITING'" id="loader-container">
+    <h1>Waiting for a game</h1>
+    <div class="loader"></div>
+</div>
+<div id="game-container" *ngIf="gameStatus!='WAITING'">
+    <div class="">
+        <span style="color: red;">{{gameService.game.player2.user.userName}} </span><span class="comment" *ngIf="gameService.game.player2.state==='FOLDED'">(Folded)</span>
+    </div>
+    <div  class="image-holder"      [@drawCard]="{ value: card.Xposition , params: { x: card.Xposition, y: card.Yposition,z:card.isFlipped ? 180 : 0 }}"   *ngFor="let card of gameService.cards;let i=index;" [style]="'top:'+((i*2)+10)+'vh;z-index:'+(31-i)">
+        <img class="front"  src="assets/cardBack.png" alt="">
+        <img class="back" [src]="gameService.cards[i].frontImg" alt="">
+    </div>
+    <div  class="player">
+        <span style="color: green;">{{gameService.game.player1.user.userName}} : {{gameService.game.player1.score}}
+
+            <span class="comment" *ngIf="gameService.game.player1.drawnAce">(+ace)</span>
+        </span>
+        <div id="buttons-container">
+            <div class="button" (click)="draw()">Draw</div>
+        <div class="button fold" (click)="fold()">Fold</div>
+        </div>
+        
+    </div>
+</div>
+<div *ngIf="checkWin()" class="game-result" id="winner">
+    <span>YOU WON !!!</span>
+    <div class="button replay"  (click)="replay()">Play Again</div>
+</div>
+<div *ngIf="checkDisconnection()" class="game-result" id="winner">
+    <span>{{gameService.game.player2.user.userName }} has disconnected ,YOU WON !!!</span>
+    <div class="button replay"  (click)="replay()">Play Again</div>
+</div>
+<div *ngIf="checkLoss()" class="game-result" id="loser">
+    <span>YOU LOST ...</span>
+    <div class="button replay" (click)="replay()">Play Again</div>
+</div>
+<div *ngIf="checkTie()" class="game-result" id="loser">
+    <span>IT's A TIE ...</span>
+    <div class="button replay"  (click)="replay()">Play Again</div>
+</div>
+
+
+
+

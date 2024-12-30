@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { WebSocketService } from './Services/WebSocket.sevice';
+import { User } from './Models/User.model';
+import { UserService } from './Services/UserService';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +10,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'blackJackFront';
+  constructor(private userService:UserService){
+    localStorage.clear()
+    // if(localStorage.getItem('userId')!=null){
+  
+    //   let newUser=new User(+localStorage.getItem('userId'),localStorage.getItem('userName'))
+    //   this.userService.setUser(newUser)
+    // }
+   
+  }
+
 }

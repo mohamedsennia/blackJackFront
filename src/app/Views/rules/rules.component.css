@@ -1,0 +1,59 @@
+:host {
+    display: block;
+   
+    background-color: #34495E;
+    height: 85vh;
+    padding: 10vh 0px 5vh 0%;
+    margin: 0;
+    background: linear-gradient(to bottom, #34495E, #2C3E50);
+}
+#backButton{
+    position: absolute;
+    top:2%;
+    left: 2%;
+    width: 4%;
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: #9fb5cb;
+    transition: background-color 300ms;
+}
+#backButton:hover{
+background-color: #5a7ea3;
+}
+h1{
+    color: #F1C40F;
+    margin: auto;
+    width: 50%;
+text-align: center;
+}
+#rules{
+    padding: 5%;
+}
+
+ol{
+    font-size: 1.4em;
+}
+h2{
+    font-size: 1em;
+    color: #BDC3C7;
+}
+ol span,ul li{
+    margin-left: 1%;
+    font-size: 0.8em;
+}
+ul{
+    list-style: disc;
+
+}
+ul,span{
+    color: #D0D3D4 ;
+}
+@media (max-width:768px) {
+    #backButton{
+        width: 8%;
+    }
+}
