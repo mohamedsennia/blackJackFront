@@ -1,5 +1,5 @@
 export const environment = {
     production: true,
-    backEndUrl: 'https://blackjack.up.railway.app/',   // Different URL for production
+    backEndUrl: "http://localhost:8080/",   // Different URL for production
     appName: 'MyApp'
   };
