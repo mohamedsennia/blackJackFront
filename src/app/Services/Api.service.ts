@@ -5,7 +5,7 @@ import { User } from "../Models/User.model";
 import { UserService } from "./UserService";
 import { GameService } from "./Game.service";
 import { Card } from "../Models/Card.model";
-import { environment } from "../../environements/enviromnement";
+import { environment } from "../../environments/environment";
 
 @Injectable({
     providedIn:"root"
