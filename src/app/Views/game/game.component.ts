@@ -97,23 +97,39 @@ export class GameComponent {
     this.gameService.cards[i].isFlipped=true
   }
   fold(){
+    if(this.gameService.myTurn){
     this.webSocketService.fold()
+  }else{
+    window.alert("please wait for your turn")
+ }
   }
   checkWin(){
 
+    if(this.gameService.game===undefined){
+      return false
+    }
     return (this.gameStatus==='FINISHED' && (this.gameService.game.player2.state==='BUSTED'||this.gameService.game.player1.state==='WON'))
 
   }
   checkLoss(){
+    if(this.gameService.game===undefined){
+      return false
+    }
     return (this.gameStatus==='FINISHED' && (this.gameService.game.player1.state==='BUSTED' || this.gameService.game.player2.state==='WON'))
   }
   checkTie(){
+    if(this.gameService.game===undefined){
+      return false
+    }
     return (this.gameStatus==='FINISHED' && (this.gameService.game.player1.state==='TIED' || this.gameService.game.player2.state==='TIED'))
   }
   replay(){
     location.reload()
   }
   checkDisconnection(){
+    if(this.gameService.game===undefined){
+      return false
+    }
     return (this.gameStatus!='FINISHED'&&(this.gameService.game.player2.state==="DISCONNECTED"))
   }
 }

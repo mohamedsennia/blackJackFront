@@ -31,6 +31,7 @@ export class WebSocketService{
        
         if(this.client.connected){
             let user= this.userService.getUser()
+         
             this.client.publish({"destination":"/app/joinGame","body":JSON.stringify(user)})
           
        let gameQueue:StompSubscription =  this.client.subscribe("/user/"+this.userService.getUser().id+"/topic/games",(message)=>{
@@ -62,18 +63,16 @@ export class WebSocketService{
                     }))
                     this.client.subscribe("/user/"+this.userService.getUser().id+"/topic/updates",(update)=>{
                         let newUpdate=JSON.parse(update.body)
-                        console.log(newUpdate)
+                       
                         if(newUpdate['updateType']==="stateUpdate"){
                            
                            
 
                             if(newUpdate['gamePlayerState']!="STOOD"){
-                                if(newUpdate['gamePlayerState']!="FOLDED"){
+                                if(newUpdate['gamePlayerState']=="BUSTED"||newUpdate['gamePlayerState']=="WON"||newUpdate['gamePlayerState']=="TIED"){
                                     this.gameService.opponentDraw.next(1)
                                 }
-                                if(this.gameService.game.player2.state!=newUpdate['gamePlayerState']){
-                                    this.gameService.myTurn=!this.gameService.myTurn
-                                }
+                                this.gameService.myTurn=true
                                 this.gameService.gameState.next(newUpdate['gameStatus'])
                                 
                             }else{

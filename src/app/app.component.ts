@@ -11,12 +11,12 @@ import { UserService } from './Services/UserService';
 export class AppComponent {
   title = 'blackJackFront';
   constructor(private userService:UserService){
-    localStorage.clear()
-    // if(localStorage.getItem('userId')!=null){
+   
+     if(localStorage.getItem('userId')!=null){
   
-    //   let newUser=new User(+localStorage.getItem('userId'),localStorage.getItem('userName'))
-    //   this.userService.setUser(newUser)
-    // }
+      let newUser=new User(+localStorage.getItem('userId'),localStorage.getItem('userName'))
+     this.userService.setUser(newUser)
+     }
    
   }
 
